@@ -8,7 +8,6 @@ export default function Scoreboard(){
         setScore(newScore);
         if(newScore > highScore){
             setHighScore(newScore);
-            console.log("New high score: " + score + 1);
         }
     }
 
@@ -19,7 +18,7 @@ export default function Scoreboard(){
     return (
         <>
             <p>Current Score: {score}</p>
-            <p>High Score: {highScore}</p>
+            <p>High     Score: {highScore}</p>
             <button onClick={increaseScore}>Increase Score</button>
             <button onClick={resetScore}>Reset Score</button>
         </>
