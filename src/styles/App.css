@@ -5,6 +5,11 @@
     margin: 0px;
 }
 
+:root{
+    --hover: rgb(117, 117, 117);
+    --click: rgb(58, 58, 58);
+}
+
 #title{
     display: flex;
     justify-self: center;
@@ -17,9 +22,21 @@
     margin: 1em;
 }
 
-:root{
-    --hover: rgb(117, 117, 117);
-    --click: rgb(58, 58, 58);
+#loadText{
+    animation: loading 2s ease-in-out infinite alternate;
+    font-size: 5em;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
 }
 
 #pokemonCards{
