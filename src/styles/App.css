@@ -3,16 +3,61 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 0px;
     margin: 0px;
-}
+}   
 
-:root{
+body:has(#modeBtn.lightMode){
+    --primary: rgb(0, 0, 0);
     --hover: rgb(117, 117, 117);
     --click: rgb(58, 58, 58);
 }
 
+body:has(#modeBtn.darkMode){
+    background-color: black;
+    color: var(--primary);
+    --primary: rgb(255, 255, 255);
+    --hover: rgb(138, 138, 138);
+    --click: rgb(197, 197, 197);
+}
+
+p, #title{
+    transition: color ease-in 0.2s;
+}
+
 #title{
     display: flex;
+    justify-content: center;
+    font-size: 2.25em;
+}
+
+#modeBtn{
+    display: flex;
     justify-self: center;
+    width: 4em;
+    height: auto;
+    transition: width height ease-in-out 0.2s;
+    transition: rotate ease-in-out 1s;
+}
+
+#modeBtn.lightMode{
+    filter: invert(89%) sepia(73%) saturate(4611%) hue-rotate(306deg) brightness(93%) contrast(117%);
+}
+
+#modeBtn.darkMode{
+    filter: invert(80%) sepia(35%) saturate(5049%) hue-rotate(194deg) brightness(107%) contrast(101%);
+}
+
+#modeBtn:hover{
+    width: 4.5em;
+    height: auto;
+    rotate: 47.5deg;
+    transition: width height ease-in-out 0.2s;
+    transition: rotate ease-in-out 1s;
+}
+
+#modeBtn:active{
+    width: 4.2em;
+    height: auto;
+    rotate: 22.5deg;
 }
 
 #scoreboard{
@@ -49,7 +94,7 @@
 
 .card{
     border-radius: 0.25em;
-    outline: 2px solid black;
+    outline: 2px solid var(--primary);
     transition: ease-in-out 0.2s;
 }
 

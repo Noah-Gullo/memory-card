@@ -1,9 +1,12 @@
 import Scoreboard from './components/Scoreboard.jsx'
 import Grid from './components/Grid.jsx'
-import { use, useEffect, useState } from "react"
+import moon from "./icons/moon.svg"
+import sun from "./icons/sun.svg"
+import { useEffect, useState } from "react"
 import './styles/App.css'
 
 export default function App() {
+  const [isDark, setMode] = useState(false);
   const [clicked, setClicked] = useState([]);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -43,8 +46,12 @@ export default function App() {
   return (
     <>
       <h1 id="title">Pokemon Memory Game</h1>
+      <input type="image" src={isDark ? moon : sun} id="modeBtn" onClick={() => { 
+          setMode(!isDark);
+        }
+      } className={isDark ? "darkMode" : "lightMode"}/>
       <Scoreboard score={score} highScore={highScore}></Scoreboard>
-      <Grid length={50} handleClick={handleClick}></Grid>
+      <Grid length={39} handleClick={handleClick}></Grid>
     </>
   )
 }
