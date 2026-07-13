@@ -41,9 +41,19 @@
 
 .card:active{
     background-color: var(--click);
-    transition: ease-in-out 0.05s;
 }
 
 .card p{
     text-align: center;
+}
+
+.card img{
+    height: 96px;
+    width: auto;
+    transition: ease-in-out 0.1s;
+}
+
+.card img:hover{
+    height: 100px;
+    width: auto;
 }
